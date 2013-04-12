@@ -1,0 +1,33 @@
+{
+  "name": "mongoose-stripe-customer",
+  "version": "0.0.1",
+  "description": "A Mongoose plugin to handle and validate stripe customers and their subscription plans",
+  "keywords": [
+    "mongoose",
+    "stripe",
+    "payment"
+  ],
+  "author": "Alex D <alex@binarypattern.com>",
+  "repository": {
+    "type": "git",
+    "url": ""
+  },
+  "dependencies": {
+    "underscore": "1.4.2",
+    "xdate": "~0.7.0"
+  },
+  "devDependencies": {
+    "mocha": "1.7.0",
+    "should": "1.2.1",
+    "sinon": "1.5.0",
+    "database-cleaner": "~0.7.0",
+    "mongoose": "~3.6.0",
+    "Faker": "~0.5.7"
+  },
+  "scripts": {
+    "test": "mocha"
+  },
+  "engines": {
+    "node": "0.10.x"
+  }
+}
