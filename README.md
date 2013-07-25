@@ -53,31 +53,33 @@ Test (requires mongodb installed locally)
 
 Example
 
-    // load
-    var stripeCustomer = require('mongoose-stripe-customer');
+```js
+// load
+var stripeCustomer = require('mongoose-stripe-customer');
 
-    // define your schema
-    var MySchema = new mongoose.Schema({...});
+// define your schema
+var MySchema = new mongoose.Schema({...});
 
-    // define plans
-    var plansPricing = {
-        'BASIC' : { name : 'Basic', price : 9.99 },
-        'TEAM'  : { name : 'Team',  price : 19.99 },
-        'GOLD'  : { name : 'Gold',  price : 29.99 }
-    };
+// define plans
+var plansPricing = {
+    'BASIC' : { name : 'Basic', price : 9.99 },
+    'TEAM'  : { name : 'Team',  price : 19.99 },
+    'GOLD'  : { name : 'Gold',  price : 29.99 }
+};
 
-    // add the plugin
-    MySchema.plugin(stripeCustomer, { 
+// add the plugin
+MySchema.plugin(stripeCustomer, { 
 
-        // the plans you defined
-        plans : plansPricing,
+    // the plans you defined
+    plans : plansPricing,
 
-        // set the default plan
-        defaultPlan : stripeCustomer.plans.FREE,
+    // set the default plan
+    defaultPlan : stripeCustomer.plans.FREE,
 
-        // a callback for when a new plan is assigned
-        onPlanGiven : function (doc, plan) {
-            // do something
-        }
+    // a callback for when a new plan is assigned
+    onPlanGiven : function (doc, plan) {
+        // do something
+    }
 
-    });
+});
+```
