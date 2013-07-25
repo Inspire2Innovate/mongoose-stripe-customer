@@ -45,11 +45,11 @@ Add it to your users/accounts table to store:
 
 Install
 
-    npm install mongoose-stripe-customer
+    $ npm install mongoose-stripe-customer
 
 Test (requires mongodb installed locally)
 
-    npm test
+    $ npm test
 
 Example
 
