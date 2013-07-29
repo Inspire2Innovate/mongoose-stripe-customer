@@ -19,27 +19,27 @@ Add it to your users/accounts table to store:
 
 ### stripe customer id
 
-- setStripeCustomerId(customerId)
-- getStripeCustomerId()
+- ```setStripeCustomerId(customerId)```
+- ```getStripeCustomerId()```
 
 ### stripe plan
-- setPlan(planId)
-- getPlanName()
-- getPlanPrice()
-- isFreePlan()
-- isNoPlan()
-- isValidPurchasePlan(planId)
-- compareToPlan(planId)
+- ```setPlan(plan)```
+- ```getPlanName()```
+- ```getPlanPrice()```
+- ```isFreePlan()```
+- ```isNoPlan()```
+- ```isValidPurchasePlan(plan)```
+- ```compareToPlan(plan)```
 
 ### last 4 digits of the payment method
-- setLast4(last4)
-- getLast4()
-- isCardOnFile()
-- resetCard()
+- ```setLast4(last4)```
+- ```getLast4()```
+- ```isCardOnFile()```
+- ```resetCard()```
 
 ### next stripe plan billing date
-- setNextBillingDate(billingDate)
-- getNextBillingDate()
+- ```setNextBillingDate(billingDate)```
+- ```getNextBillingDate()```
 
 # Usage
 
