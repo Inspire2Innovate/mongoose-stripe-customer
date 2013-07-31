@@ -33,8 +33,8 @@ describe('stripeCustomerTest', function () {
         user.getStripeCustomerId().should.equal(cusId);
     });
 
+    var plan = 'TEAM';
     it('should set the active plan', function () {
-        var plan = 'TEAM';
         user.setPlan(plan);
         user.getPlan().should.equal(plan);
     });
