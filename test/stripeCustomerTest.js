@@ -2,7 +2,7 @@ var mongoose = require('mongoose'),
     should   = require('should'),
     sinon    = require('sinon'),
     utils    = require('./utils'),
-    _        = require('Underscore');
+    _        = require('underscore');
 
 describe('stripeCustomerTest', function () {
 
