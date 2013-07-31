@@ -1,6 +1,7 @@
 # Mongoose stripe customer plugin
 
 [![Build Status](https://travis-ci.org/AlexDisler/mongoose-stripe-customer.png)](https://travis-ci.org/AlexDisler/mongoose-stripe-customer)
+[![Coverage Status](https://coveralls.io/repos/AlexDisler/mongoose-stripe-customer/badge.png)](https://coveralls.io/r/AlexDisler/mongoose-stripe-customer)
 
 Mongoose plugin to manage stripe plans and recurring payments.
 Add it to your users/accounts table to store:
