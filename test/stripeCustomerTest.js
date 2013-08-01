@@ -41,12 +41,17 @@ describe('stripeCustomerTest', function () {
     });
 
     it('should return the name and price of the active plan', function () {
-        var plan = 'TEAM';
-        modelUser.getPlanName(plan).should.equal('Team');
-        modelUser.getPlanPrice(plan).should.equal(19.99);
-        plan = 'GOLD';
-        modelUser.getPlanName(plan).should.equal('Gold');
+        var plan = 'GOLD';
+        user.setPlan(plan);
+        user.getPlan().should.equal(plan);
+        user.getPlanName().should.equal('Gold');
         modelUser.getPlanPrice(plan).should.equal(29.99);
+    });
+
+    it('should return the name of any preset given paid plan', function () {
+        modelUser.getPlanName('BASIC').should.equal('Basic');
+        modelUser.getPlanName('TEAM').should.equal('Team');
+        modelUser.getPlanName('GOLD').should.equal('Gold');
     });
 
     it('should indicate if there is no plan or if the plan is free', function () {
