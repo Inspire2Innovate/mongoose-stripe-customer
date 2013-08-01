@@ -1,5 +1,5 @@
 var mongoose         = require('mongoose'),
-    stripeCustomer = require('../lib/stripeCustomer');
+    stripeCustomer   = require('../lib/stripeCustomer');
     Faker            = require('Faker');
     DatabaseCleaner  = require('database-cleaner');
 

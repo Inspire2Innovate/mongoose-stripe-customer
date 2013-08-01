@@ -19,6 +19,7 @@ describe('stripeCustomerTest', function () {
         });
     });
 
+
     beforeEach(function (done) {
         done();
     });
@@ -28,24 +29,31 @@ describe('stripeCustomerTest', function () {
     });
 
     it('should get/set stripe customerId', function () {
-        var cusId = '12345678';
-        user.setStripeCustomerId(cusId);
-        user.getStripeCustomerId().should.equal(cusId);
+        var custId = 'cus_1234567ABCDEFG';
+        user.setStripeCustomerId(custId);
+        user.getStripeCustomerId().should.equal(custId);
     });
 
-    var plan = 'TEAM';
     it('should set the active plan', function () {
+        var plan = 'TEAM';
         user.setPlan(plan);
         user.getPlan().should.equal(plan);
     });
 
     it('should return the name and price of the active plan', function () {
+        var plan = 'TEAM';
         modelUser.getPlanName(plan).should.equal('Team');
         modelUser.getPlanPrice(plan).should.equal(19.99);
+        plan = 'GOLD';
+        modelUser.getPlanName(plan).should.equal('Gold');
+        modelUser.getPlanPrice(plan).should.equal(29.99);
     });
 
     it('should indicate if there is no plan or if the plan is free', function () {
-        // ...
+        user.setPlan('FREE');
+        user.isFreePlan().should.be.true;
+        user.setPlan('NONE');
+        user.isNoPlan().should.be.true;
     });
 
     it('should check if a given plan is valid', function () {
@@ -53,20 +61,10 @@ describe('stripeCustomerTest', function () {
     });
 
     it('should compare plans', function () {
-        /**
-            // the same plan returns 0
-            account.compareToPlan(Account.FREE).should.equal(0);
-            account.plan = Account.TEAM;
-            account.save(function () {
-                account.compareToPlan(Account.TEAM).should.equal(0);
-                // comparison to a lower plan is a downgrade
-                account.compareToPlan(Account.BASIC).should.equal(-1);
-                // comparison to a higher plan is an upgrade
-                account.compareToPlan(Account.GOLD).should.equal(+1);
-                // change the plan back
-                done();
-            });
-         */
+        user.setPlan('TEAM');
+        user.compareToPlan('BASIC').should.equal(-1);
+        user.compareToPlan('TEAM').should.equal(0);
+        user.compareToPlan('GOLD').should.equal(1);
     });
 
     it('should set/get last 4 digits of the payment method', function () {
@@ -85,7 +83,9 @@ describe('stripeCustomerTest', function () {
     });
 
     it('shuold set/get the next billing date', function () {
-        // ...
+        var now = new Date();
+        user.setNextBillingDate(now);
+        user.getNextBillingDate().should.equal(now);
     });
 
     after(function(done){
