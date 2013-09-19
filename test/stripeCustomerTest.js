@@ -85,6 +85,7 @@ describe('stripeCustomerTest', function () {
     it('should reset the card on file', function () {
         user.resetCard();
         user.isCardOnFile().should.be.false;
+        should.not.exist(user.getLast4());
     });
 
     it('shuold set/get the next billing date', function () {
